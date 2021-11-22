@@ -104,10 +104,10 @@ class ProductionCreate extends React.Component {
                                 <input type="text" className="form-control" name="link" onChange={this.handleChange} />
                             </div>
                             <button type="submit" className="btn btn-success">Créer</button>
-                            <span className="btn btn-warning" onClick={() => this.props.history.goBack()}>Retour</span>
                         </div>
                     </form>
                     
+                    <span className="btn btn-warning" onClick={() => this.props.history.goBack()}>Retour</span>
                     </div>
                 </div>
             </section>

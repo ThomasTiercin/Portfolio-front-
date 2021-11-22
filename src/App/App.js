@@ -162,7 +162,7 @@ class HomePage extends React.Component {
 							</div>
 							<div className="col-sm-offset-1 col-sm-5">
 								<div className="single-about-img">
-									<img src="assets/images/about/profile_image.jpeg" alt="profile_image"/>
+									<img src="assets/images/about/profile_image.jpeg" style={{objectFit: 'cover', objectPosition: 'top'}} alt="profile_image"/>
 									<div className="about-list-icon">
 										<ul>
 											<li>
