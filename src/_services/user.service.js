@@ -24,7 +24,6 @@ function login(username, password) {
         .then(user => {
             getUserByUsername(username)
             .then(user=>{
-                console.log('trouducu')
                 localStorage.setItem('role', btoa(encodeURIComponent(user.role)));
                 localStorage.setItem('id', JSON.stringify(user.id));
             })

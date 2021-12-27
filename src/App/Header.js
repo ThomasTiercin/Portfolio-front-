@@ -1,23 +1,34 @@
 import React from 'react';
+import { userService } from '../_services';
 
 class Header extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            role: ""
+            token: "",
+            tokenBDD: ""
         };
     }
     
     componentDidMount(e) {
+        if (localStorage.getItem('id')) {
+            let promise = userService.getUserById(localStorage.getItem('id'));
+            promise.then((user)=>{
+                this.setState({ 
+                    tokenBDD: user.token
+                });
+            })
+        }
+        
         this.setState({ 
-            role: JSON.parse(localStorage.getItem('username'))
+            token: JSON.parse(localStorage.getItem('token'))
         });
     }
 
     render(){
-        const { role } = this.state;
+        const { token, tokenBDD } = this.state;
         let admin = ""
-        if (role=='admin') {
+        if (token==tokenBDD) {
             admin =  
             (
                 <li className="nav-item"><a className="nav-link js-scroll-trigger" href="/dashboard">Tableau de bord</a></li>

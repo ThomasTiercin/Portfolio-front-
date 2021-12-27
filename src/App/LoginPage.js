@@ -4,8 +4,8 @@ class LoginPage extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            username: 'admin',
-            password: 'admin',
+            username: '',
+            password: '',
             submitted: false,
             loading: false,
             error: ''
@@ -44,23 +44,23 @@ class LoginPage extends React.Component {
             <section id="administration" className="portfolio">
                 <div className="login-page">
                 <div className="section-heading text-center">
-                    <h2>Login</h2>
+                    <h2>S'identifier</h2>
                 </div>
                 <div className="formLogin" onSubmit={this.handleSubmit}>
                     <form className="login-form">
                         <div className={'form-group' + (submitted && !username ? ' has-error' : '')}>
-                            <input type="text" className="form-control" name="username" value={username} onChange={this.handleChange} />
+                            <input type="text" className="form-control" name="username" placeholder="Nom d'utilisateur" value={username} onChange={this.handleChange} />
                             {submitted && !username &&
-                                <div className="help-block">Username is required</div>
+                                <div className="help-block">Nom d'utilisateur requis</div>
                             }
                         </div>
                         <div className={'form-group' + (submitted && !password ? ' has-error' : '')}>
-                            <input type="password" className="form-control" name="password" value={password} onChange={this.handleChange} />
+                            <input type="password" className="form-control" name="password" placeholder="Mot de passe" value={password} onChange={this.handleChange} />
                             {submitted && !password &&
-                                <div className="help-block">Password is required</div>
+                                <div className="help-block">Mot de passe requis</div>
                             }
                         </div>
-                        <button disabled={loading}>login</button>
+                        <button disabled={loading}>Se connecter</button>
                         {loading &&
                             <img src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
                         }
